@@ -1,4 +1,4 @@
-package com.arkanoid;
+package com.game;
 
 import java.awt.*;
 
@@ -54,5 +54,6 @@ public class ImgSetup {
 
     void getImgDimensions(){
         imgWidth = image.getWidth(null);
+        imgHeight = image.getHeight(null);
     }
 }

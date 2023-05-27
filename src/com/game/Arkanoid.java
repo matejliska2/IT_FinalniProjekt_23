@@ -1,4 +1,4 @@
-package com.arkanoid;
+package com.game;
 
 public interface Arkanoid {
 
