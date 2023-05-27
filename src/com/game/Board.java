@@ -110,7 +110,7 @@ public class Board extends JPanel{
     }
         if ((ball.getRct()).intersects(vaus.getRct())) {
             int vausLPos = (int) vaus.getRct().getMinX();
-            int ballLPos = (int) ball.getRct().getMinx();
+            int ballLPos = (int) ball.getRct().getMinX();
 
             int first = vausLPos + 8;
             int second = vausLPos + 16;
