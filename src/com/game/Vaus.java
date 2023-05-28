@@ -18,7 +18,7 @@ public class Vaus extends ImgSetup{
     }
 
     private void loadImage(){
-        var i = new ImageIcon("Vaus.png");
+        var i = new ImageIcon("src/Vaus.png");
         image = i.getImage();
     }
 

@@ -107,8 +107,8 @@ public class Board extends JPanel{
                 stopGame();
             }
         }
-    }
-        if ((ball.getRct()).intersects(vaus.getRct())) {
+
+       if ((ball.getRct().intersects(vaus.getRct()))) {
         int vausLPos = (int) vaus.getRct().getMinX();
         int ballLPos = (int) ball.getRct().getMinX();
 
@@ -165,4 +165,5 @@ public class Board extends JPanel{
             }
         }
     }
+}
 }

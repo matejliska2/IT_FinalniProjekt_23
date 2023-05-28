@@ -1,12 +1,15 @@
 package com.game;
 
-import javax.swing.*;
+import javax.swing.ImageIcon;
 
 public class Ball extends ImgSetup{
 
     private int drcx;
     private int drcy;
 
+    public Ball(){
+        initBall();
+    }
     private void initBall(){
 
         drcx = 1;
@@ -15,13 +18,8 @@ public class Ball extends ImgSetup{
         getImgDimensions();
         resetState();
     }
-
-    public Ball(){
-        initBall();
-    }
-
     private void loadImage(){
-        var i = new ImageIcon("Ball.png)");
+        var i = new ImageIcon("src/Ball.png)");
         image = i.getImage();
     }
 

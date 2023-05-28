@@ -20,7 +20,7 @@ public class Bricks extends ImgSetup{
     }
 
     private void loadImage(){
-        var i = new ImageIcon("Brick.png)");
+        var i = new ImageIcon("src/Brick.png");
         image = i.getImage();
     }
 
