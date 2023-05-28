@@ -36,8 +36,8 @@ public class Board extends JPanel{
                 k++;
             }
         }
-    timer = new Timer(Arkanoid.SPEED, new GameCycle());
-    timer.start();
+        timer = new Timer(Arkanoid.SPEED, new GameCycle());
+        timer.start();
     }
 
     public void paintComponent(Graphics g){
@@ -65,7 +65,7 @@ public class Board extends JPanel{
         }
     }
     private void gameFinished (Graphics2D g2d) {
-    var font = new Font("Verdana", Font.BOLD,18);
+        var font = new Font("Verdana", Font.BOLD,18);
         FontMetrics fontMetrics = this.getFontMetrics(font);
         g2d.setColor(Color.black);
         g2d.setFont(font);
@@ -89,7 +89,7 @@ public class Board extends JPanel{
         vaus.move();
         checkCollision();
         repaint();
-}
+    }
     public void stopGame() {
         inGame = false;
         timer.stop();
@@ -103,19 +103,19 @@ public class Board extends JPanel{
                 j++;
             }
             if (j == Arkanoid.N_OF_BRICKS) {
-                endMessage="congratulation!";
+                endMessage="You won Arkanoid";
                 stopGame();
             }
         }
     }
         if ((ball.getRct()).intersects(vaus.getRct())) {
-            int vausLPos = (int) vaus.getRct().getMinX();
-            int ballLPos = (int) ball.getRct().getMinX();
+        int vausLPos = (int) vaus.getRct().getMinX();
+        int ballLPos = (int) ball.getRct().getMinX();
 
-            int first = vausLPos + 8;
-            int second = vausLPos + 16;
-            int third = vausLPos + 24;
-            int fourth = vausLPos + 32;
+        int first = vausLPos + 8;
+        int second = vausLPos + 16;
+        int third = vausLPos + 24;
+        int fourth = vausLPos + 32;
 
         if (ballLPos< first) {
             ball.setDrcx(-1);
@@ -137,9 +137,32 @@ public class Board extends JPanel{
             ball.setDrcy(-1);
         }
     }
-        for (int i = 0; i < Arkanoid.N_OF_BRICKS; i++){
-            if ((ball.getRct().intersects(bricks[i].getRct()))){
+    for (int i = 0; i < Arkanoid.N_OF_BRICKS; i++){
+        if ((ball.getRct().intersects(bricks[i].getRct()))){
+            int ballLeft = (int) ball.getRct().getMinX();
+            int ballHeight = (int) ball.getRct().getHeight();
+            int ballWidth = (int) ball.getRct().getWidth();
+            int ballTop = (int) ball.getRct().getMinY();
 
+            var pointRight = new Point (ballLeft + ballWidth + 1, ballTop);
+            var pointLeft = new Point (ballLeft -1, ballTop);
+            var pointTop = new Point (ballLeft, ballTop-1);
+            var pointBottom = new Point (ballLeft, ballTop + ballHeight +1);
+            if (!bricks[i].isDestroyed()) {
+                if (bricks[i].getRct().contains(pointRight)) {
+                    ball.setDrcx(-1);
+                }else if
+                (bricks[i].getRct().contains(pointLeft)){
+                    ball.setDrcx(1);
+                }
+                if (bricks[i].getRct().contains(pointTop)){
+                    ball.setDrcy(1);
+                }else if
+                (bricks[i].getRct().contains(pointBottom)){
+                    ball.setDrcy(-1);
+                }
+                bricks[i].setDestroyed(true);
             }
+        }
     }
 }
