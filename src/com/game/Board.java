@@ -30,9 +30,9 @@ public class Board extends JPanel{
         ball = new Ball();
         vaus = new Vaus();
         int k = 0;
-        for (int i = 0; i < 5; i++){
-            for (int j = 0; j<6; j++){
-                bricks[k] = new Bricks(j * 40 + 30, i * 10 + 50);
+        for (int i = 0; i < 7; i++){
+            for (int j = 0; j< 8; j++){
+                bricks[k] = new Bricks(j * 75 + 20, i * 30 + 45);
                 k++;
             }
         }
@@ -55,6 +55,7 @@ public class Board extends JPanel{
         }
         Toolkit.getDefaultToolkit().sync();
     }
+
     private void drawObjects (Graphics2D g2d) {
         g2d.drawImage(ball.getImage(), ball.getX(),ball.getY(), ball.getImgWidth(), ball.getImgHeight(), this);
         g2d.drawImage(vaus.getImage(), vaus.getX(),vaus.getY(), vaus.getImgWidth(), vaus.getImgHeight(), this);
@@ -65,7 +66,7 @@ public class Board extends JPanel{
         }
     }
     private void gameFinished (Graphics2D g2d) {
-        var font = new Font("Verdana", Font.BOLD,18);
+        var font = new Font("Verdana", Font.BOLD,20);
         FontMetrics fontMetrics = this.getFontMetrics(font);
         g2d.setColor(Color.black);
         g2d.setFont(font);

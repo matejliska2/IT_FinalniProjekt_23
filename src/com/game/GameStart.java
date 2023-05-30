@@ -1,7 +1,7 @@
 package com.game;
 
-import javax.swing.JFrame;
-import java.awt.EventQueue;
+import javax.swing.*;
+import java.awt.*;
 
 public class GameStart extends JFrame {
 
@@ -16,6 +16,7 @@ public class GameStart extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         pack();
+        getContentPane().setBackground(Color.BLUE);
     }
     public static void main(String[] args) {
         EventQueue.invokeLater (() -> {
