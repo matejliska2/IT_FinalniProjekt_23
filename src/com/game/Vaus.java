@@ -38,16 +38,16 @@ public class Vaus extends ImgSetup{
         int key = e.getKeyCode();
 
         if (key == KeyEvent.VK_A){
-            dx = -1;
+            dx = -5;
         }else if
         (key == KeyEvent.VK_LEFT){
-            dx = -1;
+            dx = -5;
         }
         if (key == KeyEvent.VK_D){
-            dx = 1;
+            dx = 5;
         }else if
         (key == KeyEvent.VK_RIGHT){
-            dx = 1;
+            dx = 5;
         }
     }
 

@@ -19,7 +19,7 @@ public class Ball extends ImgSetup{
         resetState();
     }
     private void loadImage(){
-        var i = new ImageIcon("src/Ball.png)");
+        var i = new ImageIcon("src/Ball.png");
         image = i.getImage();
     }
 
