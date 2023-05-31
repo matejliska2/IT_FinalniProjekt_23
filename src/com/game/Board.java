@@ -12,7 +12,7 @@ public class Board extends JPanel{
     private Ball ball;
     private Bricks[] bricks;
     private Vaus vaus;
-    private String endMessage = "Game over";
+    private String endMessage = "You lost";
     private Timer timer;
     private boolean inGame = true;
 
