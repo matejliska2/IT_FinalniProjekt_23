@@ -13,6 +13,7 @@ public class Board extends JPanel{
     private Bricks[] bricks;
     private Vaus vaus;
     private String endMessage = "You lost";
+    private int score;
     private Timer timer;
     private boolean inGame = true;
 
@@ -70,7 +71,7 @@ public class Board extends JPanel{
         FontMetrics fontMetrics = this.getFontMetrics(font);
         g2d.setColor(Color.black);
         g2d.setFont(font);
-        g2d.drawString(endMessage, (Arkanoid.WIDTH - fontMetrics.stringWidth(endMessage)) / 2, Arkanoid.WIDTH / 2);
+        g2d.drawString(endMessage, (Arkanoid.WIDTH - fontMetrics.stringWidth(endMessage)) / 2, (Arkanoid.WIDTH / 2) - 100);
     }
     private class TAdapter extends KeyAdapter {
         public void keyReleased (KeyEvent e) {
@@ -104,7 +105,7 @@ public class Board extends JPanel{
                 j++;
             }
             if (j == Arkanoid.N_OF_BRICKS) {
-                endMessage="You won Arkanoid";
+                endMessage="Congratulations";
                 stopGame();
             }
         }
@@ -164,7 +165,18 @@ public class Board extends JPanel{
                 }
                 bricks[i].setDestroyed(true);
             }
+            for (int h = 0; h < Arkanoid.N_OF_BRICKS; h++){
+                score = score + 10;
+            }
         }
     }
 }
+    private void drawScore (Graphics2D s2d) {
+        var font = new Font("Chunk", Font.BOLD,20);
+        FontMetrics fontMetrics = this.getFontMetrics(font);
+        s2d.setColor(Color.black);
+        s2d.setFont(font);
+        s2d.drawString("Score: " + score, (Arkanoid.WIDTH - fontMetrics.stringWidth("Score: " + score)) / 2, Arkanoid.WIDTH / 2);
+    }
+
 }
