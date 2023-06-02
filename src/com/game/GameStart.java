@@ -4,7 +4,6 @@ import javax.swing.*;
 import java.awt.*;
 
 public class GameStart extends JFrame {
-
     public GameStart() {
         initUI();
     }
@@ -16,7 +15,7 @@ public class GameStart extends JFrame {
         setLocationRelativeTo(null);
         setResizable(false);
         pack();
-        getContentPane().setBackground(Color.BLUE);
+        setBackground(Color.BLUE);
     }
     public static void main(String[] args) {
         EventQueue.invokeLater (() -> {
@@ -24,4 +23,4 @@ public class GameStart extends JFrame {
             game.setVisible(true);
         });
     }
-}
+    }

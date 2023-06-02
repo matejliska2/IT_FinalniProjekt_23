@@ -32,8 +32,8 @@ public class Board extends JPanel{
         vaus = new Vaus();
         int k = 0;
         for (int i = 0; i < 7; i++){
-            for (int j = 0; j< 8; j++){
-                bricks[k] = new Bricks(j * 75 + 20, i * 30 + 45);
+            for (int j = 0; j< 10; j++){
+                bricks[k] = new Bricks(j * 54, i * 19 + 45);
                 k++;
             }
         }
@@ -54,7 +54,6 @@ public class Board extends JPanel{
         else {
             gameFinished(g2d);
         }
-        Toolkit.getDefaultToolkit().sync();
     }
 
     private void drawObjects (Graphics2D g2d) {
@@ -177,6 +176,9 @@ public class Board extends JPanel{
         s2d.setColor(Color.black);
         s2d.setFont(font);
         s2d.drawString("Score: " + score, (Arkanoid.WIDTH - fontMetrics.stringWidth("Score: " + score)) / 2, Arkanoid.WIDTH / 2);
+        if (inGame){
+            drawObjects(s2d);
+        }
     }
 
 }
